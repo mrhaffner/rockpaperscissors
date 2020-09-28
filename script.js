@@ -3,9 +3,6 @@ let win = 0;
 let lose = 0;
 
 function game() {
-    //use the play function inside of this to play a 5 round game that keeps score of winner/loser
-    //use console.log() to display the results of each round and the winner at the end
-    //use prompt() to get input from the user'
     if (round === 5) {
         if (win > lose) {
             console.log("Congratualtions! You are the final winner.");
@@ -15,9 +12,7 @@ function game() {
         round = 0;
         win = 0;
         lose = 0;
-        //stop the game
     } else {
-        //keep going
         play(playerPlay(), computerPlay())
         console.log(result)
         game()
@@ -25,14 +20,15 @@ function game() {
 }
 
 function computerPlay() {
-    //randomly returns 'Rock', 'Paper', or 'Scissors'
     let rps = Math.floor((Math.random() * 3) + 1);
     return rps === 1 ? 'rock' : rps === 2 ? 'paper' : 'scissors'
 }
 
 function playerPlay() {
-    let play = prompt("Rock, Paper, or Scissors?").toLowerCase()
+    let play = prompt("Rock, Paper, or Scissors?");
     if (play === 'rock' || play === 'paper' || play === 'scissors') {
+        return play.toLowerCase();
+    } else if (play === null) {
         return play;
     } else {
         alert("Please enter a valid choice");
@@ -41,11 +37,9 @@ function playerPlay() {
 }
 
 function play(playerSelection, computerSelection) {
-    //plays a single round of rock paper scissors
-    //returns a strings that declares the winner of the round like:
-        //"You Lose! Paper beats Rock"
-    //should be case insensitive
     switch (true) {
+        case playerSelection === null:
+            return (round = 5, result = "Good bye!");
         case playerSelection === 'rock' && computerSelection === 'scissors':
             return (round++, win++, 
                 result = `You Win! Rock beats Scissors.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
