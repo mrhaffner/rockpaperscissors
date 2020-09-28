@@ -1,17 +1,20 @@
+let round = 0;
+let win = 0;
+let lose = 0;
+
 function game() {
     //use the play function inside of this to play a 5 round game that keeps score of winner/loser
     //use console.log() to display the results of each round and the winner at the end
     //use prompt() to get input from the user'
-    let round = 0;
-    let win = 0;
-    let lose = 0;
-  
     if (round === 5) {
         if (win > lose) {
             console.log("Congratualtions! You are the final winner.");
         } else {
             console.log("Oh no! The computer won the game...this time...");
         }
+        round = 0;
+        win = 0;
+        lose = 0;
         //stop the game
     } else {
         //keep going
@@ -29,7 +32,7 @@ function computerPlay() {
 
 function playerPlay() {
     let play = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    if (play === 'rock' || play === 'paper' || play === 'scissor') {
+    if (play === 'rock' || play === 'paper' || play === 'scissors') {
         return play;
     } else {
         alert("Please enter a valid choice");
@@ -44,23 +47,30 @@ function play(playerSelection, computerSelection) {
     //should be case insensitive
     switch (true) {
         case playerSelection === 'rock' && computerSelection === 'scissors':
-            return result = "You Win! Rock beats Scissors";
+            return (round++, win++, 
+                result = `You Win! Rock beats Scissors.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
         case playerSelection === 'rock' && computerSelection === 'paper':
-            return result = "You Lose! Paper beats Rock";
+            return (round++, lose++,                 
+                result = `You Lose! Paper beats Rock.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
         case playerSelection === 'rock' && computerSelection === 'rock':
             return result = "A Draw! Restart the round";
         case playerSelection === 'paper' && computerSelection === 'scissors':
-            return "You Lose! Scissors beats Paper";
+            return (round++, lose++, 
+                result = `You Lose! Scissors beats Paper.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
         case playerSelection === 'paper' && computerSelection === 'paper':
-            return "A Draw! Restart the round";
+            return result = "A Draw! Restart the round";
         case playerSelection === 'paper' && computerSelection === 'rock':
-            return "You Win! Paper beats Rock";
+            return (round++, win++, 
+                result = `You Win! Paper beats Rock.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
         case playerSelection === 'scissors' && computerSelection === 'scissors':
-            return "A Draw! Restart the round";
+            return result = "A Draw! Restart the round";
         case playerSelection === 'scissors' && computerSelection === 'paper':
-            return "You Win! Scissors beats Paper";
+            return (round++, win++, 
+                result = `You Win! Scissors beats Paper.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
         case playerSelection === 'scissors' && computerSelection === 'rock':
-            return "You Lose! Rock beats Scissors";
+            return (round++, lose++, 
+                result = `You Lose! Rock beats Scissors.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
     }
 }
 
+//add a condition for if the player cancels out!!!
