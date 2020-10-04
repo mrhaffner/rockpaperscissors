@@ -1,1 +1,1 @@
-Adding a UI to the rock paper scissors game.
+Made a Rock Paper Scissors game with a simple UI (no CSS) with Javacscript for the Odin Project.
