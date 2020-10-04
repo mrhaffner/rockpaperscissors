@@ -3,28 +3,27 @@ let win = 0;
 let lose = 0;
 
 function game(x) {
-    if (round === 5) {
-        if (win > lose) {
-            //round -= 1
-            alert("Congratualtions! You are the final winner.");
-        } else {
-            //round -= 1
-            alert("Oh no! The computer won the game...this time...");
-        }
+    play(x, computerPlay());
+
+    results.textContent = `${result}`
+    if (win === 5) {
+        //alert("Congratualtions! You are the final winner.");
+        results.textContent = `${result} Congratualtions! You are the final winner.`
         round = 0;
         win = 0;
         lose = 0;
-    } else {
-        play(x, computerPlay());
-        console.log(result);
-
-    }
+    } else if (lose === 5) {
+        //alert("Oh no! The computer won the game...this time...");
+        results.textContent = `${result} Oh no! The computer won the game...this time...`
+        round = 0;
+        win = 0;
+        lose = 0;
+    } 
     playerWins.textContent = `Wins: ${win}`
     playerLosses.textContent = `Losses: ${lose}`
     computerWins.textContent = `Wins: ${lose}`
     computerLosses.textContent = `Losses: ${win}`
     roundNum.textContent = `Current Round: ${round + 1}`
-    results.textContent = `${result}`
 }
 
 function computerPlay() {
@@ -32,12 +31,8 @@ function computerPlay() {
     return rps === 1 ? 'rock' : rps === 2 ? 'paper' : 'scissors'
 }
 
-
-
 function play(playerSelection, computerSelection) {
     switch (true) {
-        case playerSelection === null:
-            return (round = 5, result = "Good bye!");
         case playerSelection === 'rock' && computerSelection === 'scissors':
             return (round++, win++, 
                 result = `You Win! Rock beats Scissors.`);
@@ -65,7 +60,6 @@ function play(playerSelection, computerSelection) {
     }
 }
 
-//adding UI functionality
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
