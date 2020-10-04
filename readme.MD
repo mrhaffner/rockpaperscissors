@@ -1,1 +1,1 @@
-This is the original version of the project. It is a console only rock paper scissors game for the Odin Project.  The next phase of the project will be to add an interactive UI.  Currently the program runs until 5 games have been completed.
+Adding a UI to the rock paper scissors game.
