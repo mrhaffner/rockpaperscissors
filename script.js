@@ -2,21 +2,29 @@ let round = 0;
 let win = 0;
 let lose = 0;
 
-function game() {
+function game(x) {
     if (round === 5) {
         if (win > lose) {
-            console.log("Congratualtions! You are the final winner.");
+            //round -= 1
+            alert("Congratualtions! You are the final winner.");
         } else {
-            console.log("Oh no! The computer won the game...this time...");
+            //round -= 1
+            alert("Oh no! The computer won the game...this time...");
         }
         round = 0;
         win = 0;
         lose = 0;
     } else {
-        play(playerPlay(), computerPlay())
-        console.log(result)
-        game()
+        play(x, computerPlay());
+        console.log(result);
+
     }
+    playerWins.textContent = `Wins: ${win}`
+    playerLosses.textContent = `Losses: ${lose}`
+    computerWins.textContent = `Wins: ${lose}`
+    computerLosses.textContent = `Losses: ${win}`
+    roundNum.textContent = `Current Round: ${round + 1}`
+    results.textContent = `${result}`
 }
 
 function computerPlay() {
@@ -24,17 +32,7 @@ function computerPlay() {
     return rps === 1 ? 'rock' : rps === 2 ? 'paper' : 'scissors'
 }
 
-function playerPlay() {
-    let play = prompt("Rock, Paper, or Scissors?");
-    if (play === 'rock' || play === 'paper' || play === 'scissors') {
-        return play.toLowerCase();
-    } else if (play === null) {
-        return play;
-    } else {
-        alert("Please enter a valid choice");
-        playerPlay();
-    }
-}
+
 
 function play(playerSelection, computerSelection) {
     switch (true) {
@@ -42,29 +40,35 @@ function play(playerSelection, computerSelection) {
             return (round = 5, result = "Good bye!");
         case playerSelection === 'rock' && computerSelection === 'scissors':
             return (round++, win++, 
-                result = `You Win! Rock beats Scissors.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
+                result = `You Win! Rock beats Scissors.`);
         case playerSelection === 'rock' && computerSelection === 'paper':
             return (round++, lose++,                 
-                result = `You Lose! Paper beats Rock.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
+                result = `You Lose! Paper beats Rock.`);
         case playerSelection === 'rock' && computerSelection === 'rock':
             return result = "A Draw! Restart the round";
         case playerSelection === 'paper' && computerSelection === 'scissors':
             return (round++, lose++, 
-                result = `You Lose! Scissors beats Paper.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
+                result = `You Lose! Scissors beats Paper.`);
         case playerSelection === 'paper' && computerSelection === 'paper':
             return result = "A Draw! Restart the round";
         case playerSelection === 'paper' && computerSelection === 'rock':
             return (round++, win++, 
-                result = `You Win! Paper beats Rock.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
+                result = `You Win! Paper beats Rock.`);
         case playerSelection === 'scissors' && computerSelection === 'scissors':
             return result = "A Draw! Restart the round";
         case playerSelection === 'scissors' && computerSelection === 'paper':
             return (round++, win++, 
-                result = `You Win! Scissors beats Paper.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
+                result = `You Win! Scissors beats Paper.`);
         case playerSelection === 'scissors' && computerSelection === 'rock':
             return (round++, lose++, 
-                result = `You Lose! Rock beats Scissors.\nRound ${round} results:\nWins: ${win}, Losses: ${lose}`);
+                result = `You Lose! Rock beats Scissors.`);
     }
 }
 
-//add a condition for if the player cancels out!!!
+//adding UI functionality
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        game(button.id);
+    })
+})
