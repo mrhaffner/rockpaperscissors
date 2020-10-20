@@ -3,29 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors - Odin Project</title>
 </head>
 <body>
-    <header>
-        <h1>Rock Paper Scissors</h1>
-        <h3>5 wins to victory!</h3>
-    </header>
-    <div id="buttonsContainer">
-        <h2>Choose Your Fate:</h2>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
-    <div id="resultsContainer">
-        <h2>Results:</h2>
-        <p id="roundNum">Current Round: 1</p>
-        <h3>Player:</h3>
-        <p id="playerWins">Wins: 0</p>
-        <p id="playerLosses">Losses: 0</p>
-        <h3>Computer:</h3>
-        <p id="computerWins">Wins: 0</p>
-        <p id="computerLosses">Losses: 0</p>
-        <h2 id="results"></h2>
+    <div>
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            
+        </header>
+        <div id="container">
+            <div id="buttonsContainer">
+                
+                <h2 id="destiny">Choose Your Destiny</h2>
+                <div id="btnDivs">
+                    <div class="btnContainer">
+                        <button id="rock"></button>
+                        <p class="choice">Rock</p>
+                    </div>
+                    <div class="btnContainer">
+                        <button id="paper"></button>
+                        <p class="choice">Paper</p>
+                    </div>   
+                    <div class="btnContainer">
+                        <button id="scissors"></button>
+                        <p class="choice">Scissors</p>
+                    </div>    
+                </div>  
+            </div>
+            <div id="resultsContainer">
+                <div id="tally">                
+                    <p id="playerWins">Wins: 0</p>
+                    <h3>5 Wins to Victory!</h3>
+                    <p id="computerLosses">Losses: 0</p>
+                </div>
+                
+                <h2 id="results"></h2>
+            </div>
+            <!-- <div id="resultsContainer">
+                <h2>Results:</h2>
+                <p id="roundNum">Current Round: 1</p>
+                <h3>Player:</h3>
+                <p id="playerWins">Wins: 0</p>
+                <p id="playerLosses">Losses: 0</p>
+                <h3>Computer:</h3>
+                <p id="computerWins">Wins: 0</p>
+                <p id="computerLosses">Losses: 0</p>
+                <h2 id="results"></h2>
+            </div> -->
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

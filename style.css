@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    text-align: center;
+}
+
+#container {
+    margin-top: 10%;
+    height: 55vh;
+    width: 100vh;
+    background-color: bisque;
+    border-radius: 3vh;
+
+}
+
+
+#buttonsContainer {
+    
+}
+
+#btnDivs {
+    /* display: inline-block; */
+    display: flex;
+    justify-content: center;
+  
+}
+
+.btnContainer {
+    /* background-color: white; */
+    padding: 3vh;
+    margin: 1vh;
+}
+
+#destiny {
+    text-align: center;
+    padding: 3vh 0 0 0;
+}
+
+button {
+    background-size: cover;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 3vh;
+    transition: all .2s ease-in-out;
+    border: .3vh solid black
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2pt black;
+}
+
+
+#rock {
+    background-color: gainsboro;
+    background-image: url(rock.png);
+}
+
+#paper {
+    background-color: gainsboro;
+    background-image: url(paper.png);
+}
+
+#scissors {
+    background-color: gainsboro;
+    background-image: url(scissors.png);
+}
+
+.choice {
+    text-align: center;
+}
+
+#tally {
+    display: flex;
+    justify-content: space-around;
+}
+
+#results {
+    text-align: center;
+}
