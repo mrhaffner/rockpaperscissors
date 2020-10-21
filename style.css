@@ -1,19 +1,26 @@
 body {
     display: flex;
     justify-content: center;
+    font-family: mk3;
+    background-image: url(spiral.jpg);
+    color: white;
+    text-shadow: 2px 5px #000000;
 }
 
 header {
     text-align: center;
+    font-size: 4vh;
+    color: white;
+    text-shadow: 2px 5px #000000;
 }
 
 #container {
     margin-top: 10%;
     height: 55vh;
     width: 100vh;
-    background-color: bisque;
+    background-color:rgb(46, 123, 187);
     border-radius: 3vh;
-
+    background-image: url(rock.jpg);
 }
 
 
@@ -37,6 +44,7 @@ header {
 #destiny {
     text-align: center;
     padding: 3vh 0 0 0;
+    font-size: 4vh;
 }
 
 button {
@@ -59,17 +67,19 @@ button:focus {
 
 
 #rock {
-    background-color: gainsboro;
+    
+    background-color: #733f68;
+    
     background-image: url(rock.png);
 }
 
 #paper {
-    background-color: gainsboro;
+    background-color: #51733F;
     background-image: url(paper.png);
 }
 
 #scissors {
-    background-color: gainsboro;
+    background-color: #51733F;
     background-image: url(scissors.png);
 }
 
@@ -84,4 +94,9 @@ button:focus {
 
 #results {
     text-align: center;
+}
+
+@font-face {
+    font-family: mk3;
+    src: url(mortalkombat3.ttf )
 }
