@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     font-family: mk3;
+    background-color: purple;
     background-image: url(spiral.jpg);
     color: white;
     text-shadow: 2px 5px #000000;
@@ -98,7 +99,7 @@ button:focus {
     text-shadow: 2px 3px #000000;
 }
 
-#playerWins, #computerLosses {
+#playerWins, #playerLosses {
     text-shadow: 2px 2px #000000;
 }
 
