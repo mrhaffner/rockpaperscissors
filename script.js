@@ -7,13 +7,11 @@ function game(x) {
 
     results.textContent = `${result}`
     if (win === 5) {
-        //alert("Congratualtions! You are the final winner.");
         results.textContent = `${result} Congratualtions! You are the final winner.`
         round = 0;
         win = 0;
         lose = 0;
     } else if (lose === 5) {
-        //alert("Oh no! The computer won the game...this time...");
         results.textContent = `${result} Oh no! The computer won the game...this time...`
         round = 0;
         win = 0;
